@@ -4,7 +4,7 @@ Versión independiente en HTML, CSS y JavaScript. Conserva intacto el portafolio
 
 Desde la raíz del repositorio, ejecuta `python3 -m http.server 3000 --bind 0.0.0.0`. La ruta de esta versión es `/contabilidad/`.
 
-Personaliza el nombre Andrea, la biografía, los servicios y `hola@example.com` en `index.html` y `app.js`. El contenido es ilustrativo y no acredita experiencia ni habilitación profesional. Los servicios y requisitos tributarios deben ajustarse al país y al perfil real.
+El nombre configurado es Tatiana. Personaliza la biografía, los servicios y `hola@example.com` en `index.html` y `app.js`. El contenido es ilustrativo y no acredita experiencia ni habilitación profesional. Los servicios y requisitos tributarios deben ajustarse al país y al perfil real.
 
 El simulador utiliza unidades monetarias genéricas (UM): saldo = ingresos − gastos fijos − gastos variables. Calcula en centésimas para evitar errores de redondeo, no calcula impuestos, no almacena datos ni realiza peticiones a un servidor. Tiene estados para saldo negativo, ingresos cero, campos vacíos e importes inválidos.
 
