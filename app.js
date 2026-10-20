@@ -1,6 +1,6 @@
 'use strict';
 document.documentElement.classList.add('js');
-window.addEventListener('load', () => setTimeout(() => document.querySelector('.loader').classList.add('done'), 750));
+window.addEventListener('load', () => setTimeout(() => document.querySelector('.loader')?.classList.add('done'), 750));
 document.querySelector('#year').textContent = new Date().getFullYear();
 const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(section => observer.observe(section));
@@ -10,10 +10,8 @@ filters.forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('.project-card').forEach(card => { card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter; });
 }));
 const projects = [
-  { title: 'Nexus Dashboard', description: 'Concepto de panel de administración que reúne métricas, tareas y actividad en una interfaz clara. Diseñado para convertir una gran cantidad de información en una vista útil.', approach: 'Componentes reutilizables, jerarquía visual y vistas adaptables. El siguiente paso sería conectar una API real y construir los estados de carga, error y permisos.', tags: ['JavaScript', 'UI / UX', 'Dashboard'] },
-  { title: 'Atlas Network', description: 'Concepto de monitorización de redes para visualizar conexiones, identificar nodos y comprender el estado de una infraestructura.', approach: 'Modelar la red como un grafo, recoger métricas con Python y presentarlas mediante una visualización interactiva. Una propuesta para unir sistemas y experiencia de usuario.', tags: ['Python', 'Redes', 'Visualización'] },
-  { title: 'Raíz Digital', description: 'Concepto de plataforma para acercar iniciativas ambientales a las personas mediante una experiencia sencilla y accesible.', approach: 'Diseño adaptable, contenido directo y una navegación con pocas barreras. Las futuras funciones incluirían un mapa de iniciativas y seguimiento de actividades.', tags: ['HTML', 'CSS', 'JavaScript'] },
-  { title: 'Flow Data Pipeline', description: 'Concepto de flujo automatizado que transforma datos dispersos en información organizada y lista para analizar.', approach: 'Separar extracción, limpieza y análisis; validar entradas, registrar incidencias y ofrecer resultados trazables. El código de la tarjeta es una ilustración del concepto.', tags: ['Python', 'SQL', 'Automatización'] }
+  { title: 'Frontend de consulta de DNI', description: 'Proyecto académico en desarrollo con Angular. El repositorio del frontend es privado y no se presenta como producto terminado.', approach: 'Práctica de desarrollo de interfaces y organización de un proyecto Angular. No se exponen datos privados ni funcionalidades no verificadas.', tags: ['Angular', 'Frontend', 'Académico'] },
+  { title: 'Mi portafolio personal', description: 'Sitio web estático y adaptable para mostrar mi formación, habilidades en aprendizaje y proyectos.', approach: 'Construido con HTML, CSS y JavaScript. Incluye filtros, detalles de proyectos, diseño adaptable y navegación interactiva.', tags: ['HTML', 'CSS', 'JavaScript'] }
 ];
 const dialog = document.querySelector('#project-dialog');
 document.querySelectorAll('[data-project]').forEach(card => card.addEventListener('click', () => {
@@ -29,11 +27,11 @@ dialog.addEventListener('click', event => { const box = dialog.getBoundingClient
 let toastTimer;
 function toast(message) { const element = document.querySelector('#toast'); element.textContent = message; element.classList.add('visible'); clearTimeout(toastTimer); toastTimer = setTimeout(() => element.classList.remove('visible'), 3500); }
 document.querySelector('#copy-email').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText('hola@example.com'); toast('Correo de ejemplo copiado: hola@example.com'); }
-  catch { toast('Correo de ejemplo: hola@example.com'); }
+  try { await navigator.clipboard.writeText('noediazad@gmail.com'); toast('Correo copiado: noediazad@gmail.com'); }
+  catch { toast('Correo: noediazad@gmail.com'); }
 });
 const terminal = document.querySelector('#terminal-output');
-const responses = { help: 'Comandos: about · skills · projects · contact · clear', about: 'Ingeniería de sistemas + curiosidad + diseño. Una plantilla para contar tu propia historia.', skills: 'HTML · CSS · JavaScript · Python · SQL · Git · Linux. Stack de ejemplo; adáptalo a tus habilidades.', projects: 'Explora Nexus, Atlas, Raíz y Flow en la sección de proyectos.', contact: 'Correo de demostración: hola@example.com. Sustitúyelo por tu dirección.' };
+const responses = { help: 'Comandos: about · skills · projects · contact · clear', about: 'Ingeniería de sistemas + curiosidad + diseño. Estudiante de Ingeniería de Sistemas Computacionales en la UPN, VIII ciclo.', skills: 'Python · Java · C · HTML · CSS · JavaScript · Angular · Cisco Packet Tracer (en aprendizaje).', projects: 'Explora el frontend académico de DNI y este portafolio web.', contact: 'Puedes escribirme a noediazad@gmail.com.' };
 document.querySelector('#terminal-form').addEventListener('submit', event => {
   event.preventDefault(); const input = document.querySelector('#command'); const command = input.value.trim().toLowerCase(); if (!command) return;
   if (command === 'clear') terminal.replaceChildren();
