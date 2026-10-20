@@ -1,4 +1,4 @@
-# ND · Portafolio de ingeniería de sistemas
+# Portafolio de ingeniería de sistemas
 
 Portafolio adaptable en HTML, CSS y JavaScript, sin compilación ni dependencias de ejecución. Incluye entrada animada, partículas sensibles al cursor, ilustración orbital, filtros de proyectos, detalles en diálogos, terminal interactiva y copia de correo.
 
