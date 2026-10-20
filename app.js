@@ -34,7 +34,7 @@ document.querySelector('#copy-email').addEventListener('click', async () => {
   catch { toast('Correo: noediazad@gmail.com'); }
 });
 const terminal = document.querySelector('#terminal-output');
-const responses = { help: 'Comandos: about · skills · projects · contact · clear', about: 'Ingeniería de sistemas + curiosidad + diseño. Estudiante de Ingeniería de Sistemas Computacionales en la UPN, VIII ciclo.', skills: 'Python · Java · C · HTML · CSS · JavaScript · Angular · Cisco Packet Tracer (en aprendizaje).', projects: 'Explora el frontend académico de DNI y este portafolio web.', contact: 'Puedes escribirme a noediazad@gmail.com.' };
+const responses = { help: 'Comandos: about · skills · projects · contact · clear', about: 'Ingeniería de sistemas + curiosidad + diseño. Estudiante de Ingeniería de Sistemas Computacionales en la UPN, VIII ciclo.', skills: 'Frontend: HTML, CSS, JavaScript, TypeScript, ReactJS y Angular. Backend: C#, ASP.NET Core, Node.js y APIs REST. Datos: SQL Server, PostgreSQL y Supabase. Herramientas: Git y GitHub. Otros: Python, Java, C y Cisco Packet Tracer.', projects: 'Explora el frontend académico de DNI y este portafolio web.', contact: 'Puedes escribirme a noediazad@gmail.com.' };
 document.querySelector('#terminal-form').addEventListener('submit', event => {
   event.preventDefault(); const input = document.querySelector('#command'); const command = input.value.trim().toLowerCase(); if (!command) return;
   if (command === 'clear') terminal.replaceChildren();
