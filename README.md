@@ -1,4 +1,4 @@
-# Portafolio · Aníbal Noé Díaz Arrestegui
+# Portafolio · Anibal Noe Diaz Arrestegui
 
 Portafolio web personal, desarrollado con **HTML, CSS y JavaScript**.
 
