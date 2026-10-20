@@ -11,7 +11,7 @@ filters.forEach(button => button.addEventListener('click', () => {
 }));
 const projects = [
   { title: 'Frontend de consulta de DNI', description: 'Proyecto académico en desarrollo con Angular. El repositorio del frontend es privado y no se presenta como producto terminado.', approach: 'Práctica de desarrollo de interfaces y organización de un proyecto Angular. No se exponen datos privados ni funcionalidades no verificadas.', tags: ['Angular', 'Frontend', 'Académico'] },
-  { title: 'Mi portafolio personal', description: 'Sitio web estático y adaptable para mostrar mi formación, habilidades en aprendizaje y proyectos.', approach: 'Construido con HTML, CSS y JavaScript. Incluye filtros, detalles de proyectos, diseño adaptable y navegación interactiva.', tags: ['HTML', 'CSS', 'JavaScript'] }
+  { title: 'Mi portafolio personal', description: 'Sitio web estático y adaptable para mostrar mi formación, habilidades en aprendizaje y proyectos.', approach: 'Construido con HTML, CSS y JavaScript. Incluye filtros, detalles de proyectos, diseño adaptable y navegación interactiva.', tags: ['HTML', 'CSS', 'JavaScript'], url: 'https://github.com/NoeDiazX/PORFOLIO' }
 ];
 const dialog = document.querySelector('#project-dialog');
 document.querySelectorAll('[data-project]').forEach(card => card.addEventListener('click', () => {
@@ -20,6 +20,9 @@ document.querySelectorAll('[data-project]').forEach(card => card.addEventListene
   document.querySelector('#dialog-description').textContent = project.description;
   document.querySelector('#dialog-approach').textContent = project.approach;
   document.querySelector('#dialog-tags').replaceChildren(...project.tags.map(tag => { const element = document.createElement('span'); element.textContent = tag; return element; }));
+  const link = document.querySelector('#project-link');
+  link.hidden = !project.url;
+  if (project.url) link.href = project.url;
   dialog.showModal();
 }));
 document.querySelectorAll('.close-dialog, .close-action').forEach(button => button.addEventListener('click', () => dialog.close()));
